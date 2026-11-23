@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "command-and-conquer-red-alert-retaliation-psx",
+  "name": "Command & Conquer - Red Alert - Retaliation",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "command-and-conquer-red-alert-retaliation-recomp",
+  "rom_identity": {
+    "crc32": [
+      "b8d83236"
+    ],
+    "md5": [
+      "313e055fd0594ef6897f7f4c0d58de5d"
+    ],
+    "sha1": [
+      "baf1c30591764b3f2e5978334843517e90d451aa"
+    ],
+    "disc_serials": [
+      "SLUS-00665"
+    ],
+    "sizes": [
+      620645760
+    ],
+    "filenames": [
+      "Command & Conquer - Red Alert - Retaliation (USA) (Disc 1) (Allies).cue",
+      "Command & Conquer - Red Alert - Retaliation (USA) (Disc 1) (Allies).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "f99a066b499005f1febccdf74448a3b2e840b3e2a22470ec69f0a5a42c2f912c"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/command-and-conquer-red-alert-retaliation-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "command-and-conquer-red-alert-retaliation-*-windows-x64.zip",
+      "linux-x64": "command-and-conquer-red-alert-retaliation-*-linux-x64.zip",
+      "macos-arm64": "command-and-conquer-red-alert-retaliation-*-macos-arm64.zip",
+      "macos-x64": "command-and-conquer-red-alert-retaliation-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "command_and_conquer_red_alert_retaliation.exe",
+    "linux": "command_and_conquer_red_alert_retaliation",
+    "macos": "command_and_conquer_red_alert_retaliation"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/command-and-conquer-red-alert-retaliation-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

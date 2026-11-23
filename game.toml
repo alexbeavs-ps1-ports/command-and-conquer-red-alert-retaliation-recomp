@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Command & Conquer - Red Alert - Retaliation"
+id = "SLUS-00665"
+players = 1
+exe = "disc/SLUS_006.65"
+disc = "disc/Command & Conquer - Red Alert - Retaliation (USA) (Disc 1) (Allies).cue"
+discs = ["disc/Command & Conquer - Red Alert - Retaliation (USA) (Disc 1) (Allies).cue"]
+disc_serials = ["SLUS-00665"]
+load_address = "0x80010000"
+entry_pc = "0x80154BA8"
+text_size = "0x001A5800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Command & Conquer - Red Alert - Retaliation (USA) (Disc 1) (Allies).bin"
+cue_name = "Command & Conquer - Red Alert - Retaliation (USA) (Disc 1) (Allies).cue"
+boot_exe = "SLUS_006.65"
+known_sizes = [620645760]
+known_md5 = [
+  "313e055fd0594ef6897f7f4c0d58de5d",
+]
+known_sha1 = [
+  "baf1c30591764b3f2e5978334843517e90d451aa",
+]
+known_crc32 = [
+  "b8d83236",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Command & Conquer - Red Alert - Retaliation Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "f99a066b499005f1febccdf74448a3b2e840b3e2a22470ec69f0a5a42c2f912c"
